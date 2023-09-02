@@ -33,15 +33,26 @@ public class NhnMartShell {
         MyLogger.getLogger().info("NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요.");
 
         BuyList buyList = new BuyList();
+//
+//        String name = sc.next();
+//        int amount = sc.nextInt();
+//
+//        buyList.add(new BuyList.Item(name, amount));
+//
+//        sc.close();
+////        return buyList;
 
-        String name = sc.next();
-        int amcount = sc.nextInt();
+        String input = sc.nextLine();
+        String[] items = input.split(" ");
 
-        buyList.add(new BuyList.Item(name, amcount));
+        for(int i=0; i< items.length; i+=2){
+            String name = items[i];
+            int amount = Integer.parseInt(items[i+1]);
+            buyList.add(new BuyList.Item(name, amount));
+        }
 
         sc.close();
         return buyList;
-
 
     }
 }
