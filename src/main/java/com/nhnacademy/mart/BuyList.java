@@ -2,6 +2,7 @@ package com.nhnacademy.mart;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class BuyList {
 
 

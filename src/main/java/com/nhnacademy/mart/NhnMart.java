@@ -1,5 +1,6 @@
 package com.nhnacademy.mart;
 
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class NhnMart {
 
     private final FoodStand foodStand = new FoodStand();
@@ -28,7 +29,13 @@ public class NhnMart {
         return new Basket();
     }
 
-    public FoodStand getFoodStand() { return foodStand; }
 
-    public Counter getCounter() { return new Counter();}
+    public FoodStand getFoodStand() {
+        return foodStand;
+    }
+
+
+    public Counter getCounter() {
+        return new Counter();
+    }
 }

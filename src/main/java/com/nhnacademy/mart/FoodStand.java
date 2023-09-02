@@ -1,10 +1,12 @@
 package com.nhnacademy.mart;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class FoodStand {
 
-    public ArrayList<Food> getFoods() {
+    public List<Food> getFoods() {
         return foods;
     }
 

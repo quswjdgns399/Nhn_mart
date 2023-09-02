@@ -1,23 +1,23 @@
 package com.nhnacademy.mart;
 
-import java.util.ArrayList;
 
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class Counter {
 
-    private int total_price;
+    private int totalPrice;
 
     public Counter() {
-        this.total_price = 0;
+        this.totalPrice = 0;
     }
 
     // 지불 받기
-    public void receive_price(int price) {
-        total_price += price;
+    public void receivePrice(int price) {
+        totalPrice += price;
     }
 
     // 총 매출액 반환
-    public int getTotal_price() {
-        return total_price;
+    public int getTotalPrice() {
+        return totalPrice;
     }
 
 

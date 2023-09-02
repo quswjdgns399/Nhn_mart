@@ -1,10 +1,12 @@
 package com.nhnacademy.mart;
-import java.util.Scanner;
-import java.util.logging.Logger;
 
+import java.util.Scanner;
+
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class NhnMartShell {
 
 
+    @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public static void main(String[] args) {
         NhnMart mart = new NhnMart();
         mart.prepareMart();
@@ -27,27 +29,20 @@ public class NhnMartShell {
         jungHun.payTox(mart.getCounter());
     }
 
+
     private static BuyList inputBuyListFromShell() {
         // TODO Scanner 입력을 받아 buyList 만들기
         Scanner sc = new Scanner(System.in);
         MyLogger.getLogger().info("NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요.");
 
         BuyList buyList = new BuyList();
-//
-//        String name = sc.next();
-//        int amount = sc.nextInt();
-//
-//        buyList.add(new BuyList.Item(name, amount));
-//
-//        sc.close();
-////        return buyList;
 
         String input = sc.nextLine();
         String[] items = input.split(" ");
 
-        for(int i=0; i< items.length; i+=2){
+        for (int i = 0; i < items.length; i += 2) {
             String name = items[i];
-            int amount = Integer.parseInt(items[i+1]);
+            int amount = Integer.parseInt(items[i + 1]);
             buyList.add(new BuyList.Item(name, amount));
         }
 
