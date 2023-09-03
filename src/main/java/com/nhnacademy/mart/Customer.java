@@ -28,15 +28,44 @@ public class Customer {
         this.basket = basket;
     }
 
+
     // TODO pickFoods 메서드 구현
-    @SuppressWarnings("checkstyle:MissingJavadocMethod")
+    // pickFoods 초기 구현
+    /*
     public void pickFoods(FoodStand foodStand) {
         for (BuyList.Item buylist : buyList.getItems()) {
             for (int i = 0; i < foodStand.getFoods().size(); i++) {
                 if (foodStand.getFoods().get(i).getName().equals(buylist.getName())) {
                     basket.add(foodStand.getFoods().get(i));
                     break;
+                } else {
+                    throw new IllegalArgumentException("식품 매대에 없는 상품입니다.");
                 }
+            }
+        }
+    }
+    */
+
+    //가장 잘 나온 pickFoods
+
+    //기능구현은 했지만 3중 for문은 좀...
+    @SuppressWarnings("checkstyle:MissingJavadocMethod")
+    public void pickFoods(FoodStand foodStand) {
+
+        for (BuyList.Item buylist : buyList.getItems()) {
+            boolean find = false;
+            for (Food foodStand1 : foodStand.getFoods()) {
+                if (foodStand1.getName().equals(buylist.getName())) {
+                    basket.add(foodStand1);
+                    find = true;
+                    for (int i = 0; i < buylist.getAmount(); i++) {
+                        foodStand.deleteFoods(foodStand1.getName());
+                    }
+                    break;
+                }
+            }
+            if (!find) {
+                throw new IllegalArgumentException("매대에 없는 식품 입니다.");
             }
         }
     }
@@ -107,6 +136,7 @@ s
             MyLogger.getLogger().warning("돈이 부족합니다. 구매할 수 없습니다.");
             throw new IllegalArgumentException("total price > hasMoney");
         }
+
 
     }
 
