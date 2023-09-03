@@ -1,7 +1,14 @@
 package com.nhnacademy.mart;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @SuppressWarnings("checkstyle:MissingJavadocType")
 public class Customer {
+
+    private static final Logger logger = LoggerFactory.getLogger(Customer.class);
+
 
     // 고객 구매 목록
     private final BuyList buyList;
@@ -130,10 +137,10 @@ s
             // 충분한 돈이 있을 경우 지불하고 hasMoney 갱신
             counter.receivePrice(total_price);
             hasMoney -= total_price;
-            MyLogger.getLogger().info("총 가격은 " + total_price + "입니다.");
-            MyLogger.getLogger().info("고객님 결제 후 잔액 : " + hasMoney);
+            logger.info("총 가격은 " + total_price + "입니다.");
+            logger.info("고객님 결제 후 잔액 : " + hasMoney);
         } else {
-            MyLogger.getLogger().warning("돈이 부족합니다. 구매할 수 없습니다.");
+            logger.warn("돈이 부족합니다. 구매할 수 없습니다.");
             throw new IllegalArgumentException("total price > hasMoney");
         }
 

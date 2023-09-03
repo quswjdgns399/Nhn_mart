@@ -1,0 +1,22 @@
+<configuration>
+    <!-- 파일로 출력 -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>myApp.log</file>
+        <encoder>
+            <pattern>%date [%thread] %level %logger{10} [%file:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 표준 출력 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- debug 레벨 설정 -->
+    <root level="debug">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

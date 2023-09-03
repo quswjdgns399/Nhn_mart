@@ -1,10 +1,13 @@
 package com.nhnacademy.mart;
 
 import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("checkstyle:MissingJavadocType")
 public class NhnMartShell {
 
+    private static final Logger logger = LoggerFactory.getLogger(NhnMartShell.class);
 
     @SuppressWarnings("checkstyle:MissingJavadocMethod")
     public static void main(String[] args) {
@@ -33,7 +36,7 @@ public class NhnMartShell {
     private static BuyList inputBuyListFromShell() {
         // TODO Scanner 입력을 받아 buyList 만들기
         Scanner sc = new Scanner(System.in);
-        MyLogger.getLogger().info("NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요.");
+        logger.info("NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요.");
 
         BuyList buyList = new BuyList();
 

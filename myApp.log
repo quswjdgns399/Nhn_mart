@@ -1,0 +1,3 @@
+2023-09-03 16:39:07,740 [main] INFO c.n.m.NhnMartShell [NhnMartShell.java:39] - NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요.
+2023-09-03 16:39:20,488 [main] INFO c.n.m.Customer [Customer.java:140] - 총 가격은 4000입니다.
+2023-09-03 16:39:20,490 [main] INFO c.n.m.Customer [Customer.java:141] - 고객님 결제 후 잔액 : 16000
